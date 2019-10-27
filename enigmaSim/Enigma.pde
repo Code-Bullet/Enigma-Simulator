@@ -2,6 +2,8 @@ class Enigma {
   Rotor rotor1;
   Rotor rotor2;
   Rotor rotor3;
+  Rotor rotor4;
+  Rotor rotor5;
   EndThing end;
   PlugBoard plugBoard;
   boolean showPlugs = false;
@@ -12,26 +14,30 @@ class Enigma {
     plugBoard = new PlugBoard();
   }
   //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-  void setRotors(int first, int second, int third) {
+  void setRotors(int first, int second, int third, int fourth, int fifth) {
 
-    if (first != second && first != third && second != third) {
+    if (first != second && first != third && second != third && first != fourth && first != fifth) {
       rotor1 = new Rotor(first, 1);
       rotor2 = new Rotor(second, 2);
       rotor3 = new Rotor(third, 3);
+      rotor4 = new Rotor(fourth, 4);
+      rotor5 = new Rotor(fifth, 5);
     }
   }
   //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-  void setRotorPositions(int first, int second, int third) {
+  void setRotorPositions(int first, int second, int third, int fourth, int fifth) {
     rotor1.position = first;
     rotor2.position = second;
     rotor3.position = third;
+    rotor4.position = fourth;
+    rotor5.position = fifth;
   }
   //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   char runMachine(char inputChar) {
-    if (rotor1.rotorNo == rotor2.rotorNo || rotor3.rotorNo == rotor2.rotorNo  || rotor1.rotorNo == rotor3.rotorNo ) {
+    if (rotor1.rotorNo == rotor2.rotorNo || rotor3.rotorNo == rotor2.rotorNo  || rotor1.rotorNo == rotor3.rotorNo || rotor1.rotorNo == rotor4.rotorNo || rotor1.rotorNo == rotor5.rotorNo || rotor3.rotorNo == rotor4.rotorNo || rotor3.rotorNo == rotor5.rotorNo || rotor4.rotorNo == rotor5.rotorNo) {
       println("Error rotors cannot have the same number"); 
       return '1';
     }
@@ -72,6 +78,14 @@ class Enigma {
         rotor3.position+=1;
         if (rotor3.position == 26) {
           rotor3.position = 0;
+          rotor4.position+=1;
+         if (rotor4.position == 26){
+           rotor4.position = 0;
+           rotor5.position+=1;
+          if (rotor5.position == 26){
+            rotor5.position = 0;
+            }
+          }
         }
       }
     }
@@ -87,6 +101,8 @@ class Enigma {
       rotor1.show();
       rotor2.show();
       rotor3.show();
+      rotor4.show();
+      rotor5.show();
       if (rotor1.rotorNo == rotor2.rotorNo || rotor3.rotorNo == rotor2.rotorNo  || rotor1.rotorNo == rotor3.rotorNo ) {
         fill(255,0,0);
         text("Cannot use the same rotor twice", width/2,50);
@@ -108,12 +124,20 @@ class Enigma {
     while (rand1 == rand3 || rand2 == rand3) {
       rand3 = floor(random(5));
     }
-    setRotors(rand1, rand2, rand3);
+    int rand4 = floor(random(5));
+    while (rand1 == rand3 || rand2 == rand3 || rand3 == rand4) {
+      rand4 = floor(random(5));
+    }
+    int rand5 = floor(random(5));
+    while (rand1 == rand3 || rand2 == rand3 || rand3 == rand4 || rand4 == rand5 || rand1 == rand5) {
+      rand5 = floor(random(5));
+    }
+    setRotors(rand1, rand2, rand3, rand4, rand5);
   }
 
 
   void randomPositions() {
-    setRotorPositions(floor(random(26)), floor(random(26)), floor(random(26)));
+    setRotorPositions(floor(random(26)), floor(random(26)), floor(random(26)), floor(random(26)), floor(random(26)));
   }
 
   //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -126,6 +150,8 @@ class Enigma {
       enigma.rotor1.click(x, y);
       enigma.rotor2.click(x, y);
       enigma.rotor3.click(x, y);
+      enigma.rotor4.click(x, y);
+      enigma.rotor5.click(x, y);
       enigma.plugBoard.click(x, y);
     }
   }
