@@ -35,3 +35,4 @@
 *.xcodeproj
 xcuserdata/
 EnigmaMachine.xcodeproj
+.DS_Store
