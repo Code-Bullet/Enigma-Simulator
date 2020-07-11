@@ -17,7 +17,7 @@ EnigmaMachine::EnigmaMachine(int rot_nos[NO_OF_ROTORS], int reflectorType): _rot
 
 
 std::string EnigmaMachine::encode(std::string inputStr){
-    std::string inpCopy = custom_utils::removeSpace(inputStr);
+    std::string inpCopy = custom_utils::removeSpecial(inputStr);
     
     inpCopy = custom_utils::toUppercase(inpCopy);
     

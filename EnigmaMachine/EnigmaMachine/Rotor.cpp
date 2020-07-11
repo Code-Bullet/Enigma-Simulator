@@ -7,6 +7,7 @@
 //
 
 #include "Rotor.hpp"
+#include <iostream>
 
 Rotor::Rotor(int rotorNumber) {
     _rotorNo    = rotorNumber;
@@ -27,19 +28,19 @@ void Rotor::setWiring(int type){
             _notch = rot1_notch;
             break;
         case ROTOR_2:
-            _wiring = wiring_rotor1;
+            _wiring = wiring_rotor2;
             _notch = rot2_notch;
             break;
         case ROTOR_3:
-            _wiring = wiring_rotor1;
+            _wiring = wiring_rotor3;
             _notch = rot3_notch;
             break;
         case ROTOR_4:
-            _wiring = wiring_rotor1;
+            _wiring = wiring_rotor4;
             _notch = rot4_notch;
             break;
         case ROTOR_5:
-            _wiring = wiring_rotor1;
+            _wiring = wiring_rotor5;
             _notch = rot5_notch;
             break;
         default:
@@ -57,7 +58,7 @@ char Rotor::runThrough(char input, bool forward){
         intInp = alphabet.find(input);
         intInp = (intInp + _offset) % 26;
         output = _wiring[intInp];
-        nextRot -> runThrough(output, true);
+        output = nextRot -> runThrough(output, true);
     } else {
         intInp = _wiring.find(input);
         intInp = (intInp - _offset)%26;
@@ -66,11 +67,11 @@ char Rotor::runThrough(char input, bool forward){
         }
         output = alphabet[intInp];
         if(prevRot != nullptr){
-            prevRot -> runThrough(output, false);
+            output = prevRot -> runThrough(output, false);
         }
     }
-
-    if (_wiring[_offset] == _notch){
+    
+    if (alphabet[_offset] == _notch){
         nextRot -> rotate();
     }
 

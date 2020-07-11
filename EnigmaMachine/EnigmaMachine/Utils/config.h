@@ -51,16 +51,17 @@
 //                                    {18, 12}, {19, 7}, {20, 11}, {21, 0}, {22, 2}, {23, 24}, {24, 23}, {25, 9} };
 
 
-const std::string wiring_rotor1 = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
-const std::string wiring_rotor2 = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
-const std::string wiring_rotor3 = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
-const std::string wiring_rotor4 = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
-const std::string wiring_rotor5 = "VZBRGITYUPSDNHLXAWMJQOFECK";
-const std::string wiring_reflectorB = "VZBRGITYUPSDNHLXAWMJQOFECK";
-const std::string wiring_reflectorC = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
+const std::string alphabet               = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const std::string wiring_rotor1          = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
+const std::string wiring_rotor2          = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
+const std::string wiring_rotor3          = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
+const std::string wiring_rotor4          = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
+const std::string wiring_rotor5          = "VZBRGITYUPSDNHLXAWMJQOFECK";
+const std::string wiring_reflectorB      = "EJMZALYXVBWFCRQUONTSPIKHGD";
+const std::string wiring_reflectorC      = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
 const std::string wiring_reflectorB_thin = "ENKQAUYWJICOPBLMDXZVFTHRGS";
 const std::string wiring_reflectorC_thin = "RDOBJNTKVEHMLFCWZAXGYIPSUQ";
-const std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const char rot1_notch = 'Q';
 const char rot2_notch = 'E';
