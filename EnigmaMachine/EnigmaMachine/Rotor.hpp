@@ -31,6 +31,7 @@ public:
     virtual char runThrough(char input, bool forward);
     virtual void rotate();
     int position();
+    
     virtual void setWiring(int type);
     void setOffset(int num);
 };

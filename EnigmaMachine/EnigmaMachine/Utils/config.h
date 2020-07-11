@@ -11,15 +11,19 @@
 #include <string>
 
 //Rotor names
-#define ROTOR_1 1
-#define ROTOR_2 2
-#define ROTOR_3 3
-#define ROTOR_4 4
-#define ROTOR_5 5
-#define REFLECTOR_B 6
-#define REFLECTOR_B_THIN 7
-#define REFLECTOR_C 8
-#define REFLECTOR_C_THIN 9
+#define ROTOR_1 0
+#define ROTOR_2 1
+#define ROTOR_3 2
+#define ROTOR_4 3
+#define ROTOR_5 4
+
+#define REFLECTOR_B 0
+#define REFLECTOR_B_THIN 1
+#define REFLECTOR_C 2
+#define REFLECTOR_C_THIN 3
+
+#define NO_ROTOR_TYPES 5
+#define NO_REFLECTOR_TYPES 4
 
 //Rotor Wirings
 //const int wiring_rotor1[][2] = { {0, 15}, {1, 4}, {2, 25}, {3, 20}, {4, 14}, {5, 7}, {6, 23}, {7, 18}, {8, 2},

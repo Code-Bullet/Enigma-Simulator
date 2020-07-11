@@ -19,6 +19,8 @@ Rotor::Rotor(int rotorNumber) {
 }
 
 void Rotor::setWiring(int type){
+    _rotorNo = type;
+    
     switch(type) {
         case ROTOR_1:
             _wiring = wiring_rotor1;

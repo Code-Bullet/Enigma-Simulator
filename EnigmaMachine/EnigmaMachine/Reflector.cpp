@@ -27,6 +27,7 @@ char Reflector::runThrough(char input, bool forward = true) {
 }
 
 void Reflector::setWiring(int type){
+    _rotorNo = type;
     switch(type){
         case REFLECTOR_B:
             _wiring = wiring_reflectorB;
