@@ -67,6 +67,3 @@ const char rot2_notch = 'E';
 const char rot3_notch = 'V';
 const char rot4_notch = 'J';
 const char rot5_notch = 'Z';
-
-
-
