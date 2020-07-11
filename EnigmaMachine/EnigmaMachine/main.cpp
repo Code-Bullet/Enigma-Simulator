@@ -8,15 +8,18 @@
 
 #include <iostream>
 #include <string>
-#include "EnigmaMachine.hpp"
-#include "Utils/config.h"
 #include <time.h>
 #include <stdlib.h>
+
+#include "EnigmaMachine.hpp"
+#include "Utils/config.h"
+#include "RotorConfig.hpp"
 
 
 int main(int argc, const char * argv[]) {
     int rotorNumbers[NO_OF_ROTORS] = {ROTOR_1, ROTOR_2, ROTOR_3};
     int offsets[NO_OF_ROTORS];
+    
 
     srand(time(0));
     
@@ -25,8 +28,10 @@ int main(int argc, const char * argv[]) {
         std::cout << offsets[i] << " ";
     }
     
-    EnigmaMachine enigmaMachine1(rotorNumbers, REFLECTOR_B, offsets);
-    EnigmaMachine enigmaMachine2(rotorNumbers, REFLECTOR_B, offsets);
+    RotorConfig rConfig(offsets, rotorNumbers, REFLECTOR_B);
+    
+    EnigmaMachine enigmaMachine1(rConfig);
+    EnigmaMachine enigmaMachine2(rConfig);
     
     std::string message;
     

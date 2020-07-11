@@ -9,9 +9,7 @@
 #include "EnigmaMachine.hpp"
 #include "Utils/utils.hpp"
 
-EnigmaMachine::EnigmaMachine(int rot_nos[NO_OF_ROTORS], int reflectorType, int offsets[NO_OF_ROTORS]):
-                            _rotorSet(rot_nos, reflectorType, offsets) { }
-
+EnigmaMachine::EnigmaMachine(RotorConfig r_config): _rotorSet(r_config) { }
 
 std::string EnigmaMachine::encode(std::string inputStr){
     std::string inpCopy = custom_utils::removeSpecial(inputStr);

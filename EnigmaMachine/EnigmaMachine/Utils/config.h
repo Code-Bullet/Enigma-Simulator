@@ -25,6 +25,8 @@
 #define NO_ROTOR_TYPES 5
 #define NO_REFLECTOR_TYPES 4
 
+#define NO_OF_ROTORS 3
+
 //Rotor Wirings
 //const int wiring_rotor1[][2] = { {0, 15}, {1, 4}, {2, 25}, {3, 20}, {4, 14}, {5, 7}, {6, 23}, {7, 18}, {8, 2},
 //                                {9, 21}, {10, 5}, {11, 12}, {12, 19}, {13, 1}, {14, 6}, {15, 11}, {16, 17}, {17, 8},

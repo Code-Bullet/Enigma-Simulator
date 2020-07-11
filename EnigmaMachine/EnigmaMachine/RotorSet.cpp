@@ -7,16 +7,13 @@
 //
 
 #include "RotorSet.hpp"
-#include <stdlib.h>
-#include <time.h>
-#include <set>
 
-RotorSet::RotorSet(int rot_nos[NO_OF_ROTORS], int reflectorType, int offsets[NO_OF_ROTORS]) {
+RotorSet::RotorSet(RotorConfig r_config): _config(r_config) {
     for (int i = 0; i < NO_OF_ROTORS; i++){
-        _rotors[i] = new Rotor(rot_nos[i], offsets[i]);
+        _rotors[i] = new Rotor ( _config.types[i], _config.offsets[i] );
     }
-    _reflector = new Reflector(reflectorType);
-
+    _reflector = new Reflector ( _config.reflectorType );
+    
     for (int i = 0; i < NO_OF_ROTORS - 1; i++){
         _rotors[i]->nextRot = _rotors[i+1];
         _rotors[i+1]->prevRot = _rotors[i];
@@ -42,20 +39,23 @@ int RotorSet::parseValue(char input){
 
 void RotorSet::setRotorOffset(int rotPos, int offset){
     if (rotPos >= NO_OF_ROTORS) return;
+    
     offset %= 26;
     _rotors[rotPos]->setOffset(offset);
-    _config[rotPos][1] = offset;
+    
+    _config.offsets[rotPos] = offset;
 }
 
 void RotorSet::setReflectorType(int type){
     _reflector->setWiring(type);
-    _config[NO_OF_ROTORS][0] = type;
+    _config.reflectorType = type;
 }
 
 void RotorSet::setRotorType(int rotPos, int type){
     if (rotPos >= NO_OF_ROTORS) return;
+    
     _rotors[rotPos]->setWiring(type);
-    _config[rotPos][0] = type;
+    _config.types[rotPos] = type;
 
 }
 
