@@ -27,7 +27,7 @@ public:
     Rotor* prevRot;
 
     Rotor(){ };
-    Rotor(int rotorNumber);
+    Rotor(int rotorNumber, int offset);
     virtual char runThrough(char input, bool forward);
     virtual void rotate();
     int position();
