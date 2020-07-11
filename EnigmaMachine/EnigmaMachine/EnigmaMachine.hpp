@@ -13,9 +13,8 @@
 
 class EnigmaMachine {
     RotorSet _rotorSet;
-    std::string _intCharMap;
     
 public:
-    EnigmaMachine(int rot_nos[NO_OF_ROTORS], int reflectorType);
+    EnigmaMachine(int rot_nos[NO_OF_ROTORS], int reflectorType, int offsets[NO_OF_ROTORS]);
     std::string encode(std::string input);
 };

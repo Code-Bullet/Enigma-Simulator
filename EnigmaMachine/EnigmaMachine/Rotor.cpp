@@ -9,9 +9,9 @@
 #include "Rotor.hpp"
 #include <iostream>
 
-Rotor::Rotor(int rotorNumber) {
+Rotor::Rotor(int rotorNumber, int offset) {
     _rotorNo    = rotorNumber;
-    _offset     = 0;
+    _offset     = offset;
     
     prevRot = nullptr;
     nextRot = nullptr;
@@ -54,7 +54,6 @@ char Rotor::runThrough(char input, bool forward){
     int intInp;
     char output;
     
-    
     if (forward) {
         intInp = alphabet.find(input);
         intInp = (intInp + _offset) % 26;
@@ -70,11 +69,12 @@ char Rotor::runThrough(char input, bool forward){
         if(prevRot != nullptr){
             output = prevRot -> runThrough(output, false);
         }
+        
+        if (alphabet[_offset] == _notch){
+            nextRot -> rotate();
+        }
     }
-    
-    if (alphabet[_offset] == _notch){
-        nextRot -> rotate();
-    }
+
     return output;
 }
 

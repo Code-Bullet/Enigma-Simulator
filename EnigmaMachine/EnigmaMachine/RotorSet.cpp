@@ -11,9 +11,9 @@
 #include <time.h>
 #include <set>
 
-RotorSet::RotorSet(int rot_nos[NO_OF_ROTORS], int reflectorType) {
+RotorSet::RotorSet(int rot_nos[NO_OF_ROTORS], int reflectorType, int offsets[NO_OF_ROTORS]) {
     for (int i = 0; i < NO_OF_ROTORS; i++){
-        _rotors[i] = new Rotor(rot_nos[i]);
+        _rotors[i] = new Rotor(rot_nos[i], offsets[i]);
     }
     _reflector = new Reflector(reflectorType);
     

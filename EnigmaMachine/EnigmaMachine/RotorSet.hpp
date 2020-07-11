@@ -22,7 +22,7 @@ private:
     int _config[NO_OF_ROTORS+1][2];
     
 public:
-    RotorSet(int rot_nos[NO_OF_ROTORS], int reflectorType);
+    RotorSet(int rot_nos[NO_OF_ROTORS], int reflectorType, int offsets[NO_OF_ROTORS]);
     ~RotorSet();
     int parseValue(char input);
     
