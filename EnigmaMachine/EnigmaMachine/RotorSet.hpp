@@ -24,15 +24,15 @@ private:
     Rotor* _reflector;
     
     RotorConfig _config;
-    
+
 public:
     RotorSet(RotorConfig r_config);
     ~RotorSet();
     int parseValue(char input);
-    
+
     void setRotorOffset(int rotPos, int offset);
     void setRotorType(int rotPos, int type);
     void setReflectorType(int type);
-    
+
     void randomConfig();
 };

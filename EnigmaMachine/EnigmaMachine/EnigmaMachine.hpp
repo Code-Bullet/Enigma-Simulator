@@ -17,7 +17,7 @@
 
 class EnigmaMachine {
     RotorSet _rotorSet;
-    
+
 public:
     EnigmaMachine(RotorConfig r_config);
     std::string encode(std::string input);

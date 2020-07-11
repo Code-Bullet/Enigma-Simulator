@@ -15,13 +15,13 @@ Rotor::Rotor(int rotorNumber, int offset) {
     
     prevRot = nullptr;
     nextRot = nullptr;
-    
+
     setWiring(_rotorNo);
 }
 
 void Rotor::setWiring(int type){
     _rotorNo = type;
-    
+
     switch(type) {
         case ROTOR_1:
             _wiring = wiring_rotor1;
@@ -53,7 +53,7 @@ void Rotor::setWiring(int type){
 char Rotor::runThrough(char input, bool forward){
     int intInp;
     char output;
-    
+
     if (forward) {
         intInp = alphabet.find(input);
         intInp = (intInp + _offset) % 26;
