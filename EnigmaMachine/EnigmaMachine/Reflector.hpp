@@ -7,7 +7,9 @@
 //
 
 #pragma once
+
 #include "Rotor.hpp"
+#include "Utils/config.h"
 
 class Reflector : public Rotor {
 public:

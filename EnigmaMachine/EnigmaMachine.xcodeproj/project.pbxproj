@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		642ADE3024B9C4F900C0A06A /* Reflector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642ADE2E24B9C4F900C0A06A /* Reflector.cpp */; };
 		642ADE3324BA2C0900C0A06A /* EnigmaDecrypter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642ADE3124BA2C0900C0A06A /* EnigmaDecrypter.cpp */; };
+		642ADE3624BA2FB900C0A06A /* RotorConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642ADE3424BA2FB900C0A06A /* RotorConfig.cpp */; };
 		64FDE08A24B8E42F003D1B0D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64FDE08924B8E42F003D1B0D /* main.cpp */; };
 		64FDE09224B8E48E003D1B0D /* EnigmaMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64FDE09024B8E48E003D1B0D /* EnigmaMachine.cpp */; };
 		64FDE09924B8F57E003D1B0D /* RotorSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64FDE09724B8F57E003D1B0D /* RotorSet.cpp */; };
@@ -32,6 +33,8 @@
 		642ADE2F24B9C4F900C0A06A /* Reflector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Reflector.hpp; sourceTree = "<group>"; };
 		642ADE3124BA2C0900C0A06A /* EnigmaDecrypter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EnigmaDecrypter.cpp; sourceTree = "<group>"; };
 		642ADE3224BA2C0900C0A06A /* EnigmaDecrypter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EnigmaDecrypter.hpp; sourceTree = "<group>"; };
+		642ADE3424BA2FB900C0A06A /* RotorConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RotorConfig.cpp; sourceTree = "<group>"; };
+		642ADE3524BA2FB900C0A06A /* RotorConfig.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RotorConfig.hpp; sourceTree = "<group>"; };
 		64FDE08624B8E42F003D1B0D /* EnigmaMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EnigmaMachine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FDE08924B8E42F003D1B0D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		64FDE09024B8E48E003D1B0D /* EnigmaMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EnigmaMachine.cpp; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				642ADE2F24B9C4F900C0A06A /* Reflector.hpp */,
 				642ADE3124BA2C0900C0A06A /* EnigmaDecrypter.cpp */,
 				642ADE3224BA2C0900C0A06A /* EnigmaDecrypter.hpp */,
+				642ADE3424BA2FB900C0A06A /* RotorConfig.cpp */,
+				642ADE3524BA2FB900C0A06A /* RotorConfig.hpp */,
 			);
 			path = EnigmaMachine;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64FDE0A424B925CF003D1B0D /* Rotor.cpp in Sources */,
+				642ADE3624BA2FB900C0A06A /* RotorConfig.cpp in Sources */,
 				64FDE09224B8E48E003D1B0D /* EnigmaMachine.cpp in Sources */,
 				642ADE3024B9C4F900C0A06A /* Reflector.cpp in Sources */,
 				64FDE08A24B8E42F003D1B0D /* main.cpp in Sources */,

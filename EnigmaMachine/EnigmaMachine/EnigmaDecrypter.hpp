@@ -7,3 +7,21 @@
 //
 
 #pragma once
+
+#include "EnigmaMachine.hpp"
+#include "RotorConfig.hpp"
+
+class EnigmaDecrypter {
+private:
+    EnigmaMachine _enigmaMachine;
+    RotorConfig _config;
+    bool _keyFound;
+    
+public:
+    EnigmaDecrypter();
+    void offsetIterator();
+    void rotorTypeIterator();
+    void reflectorIterator();
+    bool run();
+    std::string decrypt(std::string inp);
+};
