@@ -16,6 +16,6 @@ class EnigmaMachine {
     std::string _intCharMap;
     
 public:
-    EnigmaMachine(int rot_nos[NO_OF_ROTORS]);
+    EnigmaMachine(int rot_nos[NO_OF_ROTORS], int reflectorType);
     std::string encode(std::string input);
 };

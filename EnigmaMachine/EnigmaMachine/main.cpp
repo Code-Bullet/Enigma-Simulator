@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[]) {
     int rotorNumbers[NO_OF_ROTORS] = {ROTOR_1, ROTOR_2, ROTOR_3};
-    EnigmaMachine enigmaMachine(rotorNumbers);
+    EnigmaMachine enigmaMachine(rotorNumbers, REFLECTOR_B);
     
     std::cout << enigmaMachine.encode("NANANANANA BATMAN") << "\n";
     

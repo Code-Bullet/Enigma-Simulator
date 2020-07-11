@@ -11,19 +11,26 @@
 #include "Utils/config.h"
 #include "Utils/utils.hpp"
 
+#include <string>
+
 class Rotor {
 private:
     int _offset;
-    int _rotorNo;
-    int _rotorPos;
-    int _wiring[26][2];
+    char _notch;
     
-    void setWiring(int no);
+protected:
+    int _rotorNo;
+    std::string _wiring;
     
 public:
+    Rotor* nextRot;
+    Rotor* prevRot;
+    
     Rotor(){ };
-    Rotor(int rotorNumber, int rotorPosition);
-    int runThrough(int input, bool forward = true);
-    void rotate();
+    Rotor(int rotorNumber);
+    virtual char runThrough(char input, bool forward);
+    virtual void rotate();
     int position();
+    virtual void setWiring(int type);
+    void setOffset(int num);
 };

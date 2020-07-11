@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642ADE3024B9C4F900C0A06A /* Reflector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642ADE2E24B9C4F900C0A06A /* Reflector.cpp */; };
 		64FDE08A24B8E42F003D1B0D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64FDE08924B8E42F003D1B0D /* main.cpp */; };
 		64FDE09224B8E48E003D1B0D /* EnigmaMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64FDE09024B8E48E003D1B0D /* EnigmaMachine.cpp */; };
 		64FDE09924B8F57E003D1B0D /* RotorSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64FDE09724B8F57E003D1B0D /* RotorSet.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		642ADE2E24B9C4F900C0A06A /* Reflector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Reflector.cpp; sourceTree = "<group>"; };
+		642ADE2F24B9C4F900C0A06A /* Reflector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Reflector.hpp; sourceTree = "<group>"; };
 		64FDE08624B8E42F003D1B0D /* EnigmaMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EnigmaMachine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FDE08924B8E42F003D1B0D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		64FDE09024B8E48E003D1B0D /* EnigmaMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EnigmaMachine.cpp; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				64FDE09124B8E48E003D1B0D /* EnigmaMachine.hpp */,
 				64FDE09724B8F57E003D1B0D /* RotorSet.cpp */,
 				64FDE09824B8F57E003D1B0D /* RotorSet.hpp */,
+				642ADE2E24B9C4F900C0A06A /* Reflector.cpp */,
+				642ADE2F24B9C4F900C0A06A /* Reflector.hpp */,
 			);
 			path = EnigmaMachine;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			files = (
 				64FDE0A424B925CF003D1B0D /* Rotor.cpp in Sources */,
 				64FDE09224B8E48E003D1B0D /* EnigmaMachine.cpp in Sources */,
+				642ADE3024B9C4F900C0A06A /* Reflector.cpp in Sources */,
 				64FDE08A24B8E42F003D1B0D /* main.cpp in Sources */,
 				64FDE09924B8F57E003D1B0D /* RotorSet.cpp in Sources */,
 			);

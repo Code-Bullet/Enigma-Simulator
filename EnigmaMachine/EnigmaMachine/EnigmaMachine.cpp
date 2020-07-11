@@ -9,7 +9,7 @@
 #include "EnigmaMachine.hpp"
 #include "Utils/utils.hpp"
 
-EnigmaMachine::EnigmaMachine(int rot_nos[NO_OF_ROTORS]): _rotorSet(rot_nos) {
+EnigmaMachine::EnigmaMachine(int rot_nos[NO_OF_ROTORS], int reflectorType): _rotorSet(rot_nos, reflectorType) {
     for (int i = 0; i < 26; i++){
         _intCharMap.push_back('A' + i);
     }
@@ -23,11 +23,7 @@ std::string EnigmaMachine::encode(std::string inputStr){
     
     std::string outputStr;
     for (int i = 0; i < inpCopy.size(); i++){
-        char charIn     = (char) inpCopy[i];
-        int intIn       = _intCharMap.find( charIn );
-        int intOut      = _rotorSet.parseValue( intIn );
-        char charOut    = _intCharMap[intOut];
-        
+        char charOut      = _rotorSet.parseValue( inpCopy[i] );
         outputStr.push_back(charOut);
     }
     

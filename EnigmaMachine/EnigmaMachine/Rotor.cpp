@@ -5,58 +5,74 @@
 //  Created by Ayush Agrawal on 10/07/20.
 //  Copyright © 2020 Ayush Agrawal. All rights reserved.
 //
-//  Rotor::runThrough adapted from Code_Bullet's code at https://github.com/Code-Bullet/Enigma-Simulator/blob/master/enigmaSim/Rotor.pde
 
 #include "Rotor.hpp"
 
-Rotor::Rotor(int rotorNumber, int rotorPosition) {
+Rotor::Rotor(int rotorNumber) {
     _rotorNo    = rotorNumber;
-    _rotorPos   = rotorPosition;
     _offset     = 0;
-
+    
+    prevRot = nullptr;
+    nextRot = nullptr;
+    
     setWiring(_rotorNo);
 }
 
-void Rotor::setWiring(int no){
-    switch(no) {
+void Rotor::setWiring(int type){
+    switch(type) {
         case ROTOR_1:
-            custom_utils::copyArr2D(_wiring, wiring_rotor1);
+            _wiring = wiring_rotor1;
+            _notch = rot1_notch;
             break;
         case ROTOR_2:
-            custom_utils::copyArr2D(_wiring, wiring_rotor2);
+            _wiring = wiring_rotor1;
+            _notch = rot2_notch;
             break;
         case ROTOR_3:
-            custom_utils::copyArr2D(_wiring, wiring_rotor3);
+            _wiring = wiring_rotor1;
+            _notch = rot3_notch;
             break;
         case ROTOR_4:
-            custom_utils::copyArr2D(_wiring, wiring_rotor4);
+            _wiring = wiring_rotor1;
+            _notch = rot4_notch;
             break;
         case ROTOR_5:
-            custom_utils::copyArr2D(_wiring, wiring_rotor5);
+            _wiring = wiring_rotor1;
+            _notch = rot5_notch;
             break;
-        case REFLECTOR:
-            custom_utils::copyArr2D(_wiring, wiring_reflector);
+        default:
+            _wiring = alphabet;
+            _notch = 'A';
+            break;
     }
 }
 
-int Rotor::runThrough(int input, bool forward){
+char Rotor::runThrough(char input, bool forward){
+    int intInp;
+    char output;
+    
     if (forward) {
-        input = (input + _offset) % 26;
-
-        return _wiring[input][1];
+        intInp = alphabet.find(input);
+        intInp = (intInp + _offset) % 26;
+        output = _wiring[intInp];
+        nextRot -> runThrough(output, true);
     } else {
-        for (int i = 0; i< 26; i++) {
-            if (input == _wiring[i][1]) {
-                int output = ( _wiring[i][0]- _offset ) % 26;
-
-                if (output < 0){
-                    output = 26 + output;
-                }
-                return output;
-            }
+        intInp = _wiring.find(input);
+        intInp = (intInp - _offset)%26;
+        if (intInp < 0){
+            intInp += 26;
+        }
+        output = alphabet[intInp];
+        if(prevRot != nullptr){
+            prevRot -> runThrough(output, false);
         }
     }
-    return -1;
+    
+    if (_wiring[_offset] == _notch){
+        nextRot -> rotate();
+    }
+    
+    return output;
 }
 
 void Rotor::rotate(){
@@ -64,5 +80,9 @@ void Rotor::rotate(){
 }
 
 int Rotor::position(){
-    return _rotorPos;
+    return _offset;
+}
+
+void Rotor::setOffset(int num){
+    _offset = num % 26;
 }
