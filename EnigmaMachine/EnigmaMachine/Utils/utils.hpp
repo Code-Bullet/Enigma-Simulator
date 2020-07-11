@@ -18,8 +18,10 @@ namespace custom_utils {
         }
     }
     
-    inline std::string removeSpace(std::string str){
+    inline std::string removeSpecial(std::string str){
         str.erase(remove_if(str.begin(), str.end(), isspace),str.end());
+        str.erase(remove_if(str.begin(), str.end(), isdigit),str.end());
+        str.erase(remove_if(str.begin(), str.end(), ispunct),str.end());
         
         return str;
     }

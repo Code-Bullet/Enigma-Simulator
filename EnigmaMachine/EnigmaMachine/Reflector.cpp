@@ -7,6 +7,7 @@
 //
 
 #include "Reflector.hpp"
+#include <iostream>
 
 Reflector::Reflector(int type){
     _rotorNo = type;
@@ -18,10 +19,10 @@ char Reflector::runThrough(char input, bool forward = true) {
     char output;
     
     forward = true;
-    
+        
     intInp = alphabet.find(input);
     output = _wiring[intInp];
-    nextRot -> runThrough(output, false);
+    output = nextRot -> runThrough(output, false);
     
     return output;
 }
