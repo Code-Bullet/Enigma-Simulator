@@ -17,21 +17,21 @@ class Rotor {
 private:
     int _offset;
     char _notch;
-    
+
 protected:
     int _rotorNo;
     std::string _wiring;
-    
+
 public:
     Rotor* nextRot;
     Rotor* prevRot;
-    
+
     Rotor(){ };
     Rotor(int rotorNumber, int offset);
     virtual char runThrough(char input, bool forward);
     virtual void rotate();
     int position();
-    
+
     virtual void setWiring(int type);
     void setOffset(int num);
 };
