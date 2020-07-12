@@ -16,12 +16,16 @@ private:
     EnigmaMachine _enigmaMachine;
     RotorConfig _config;
     bool _keyFound;
+    std::string _crib;
+    std::string _plaintxt;
+    bool offsetIterator();
+
     
 public:
     EnigmaDecrypter();
-    void offsetIterator();
     void rotorTypeIterator();
     void reflectorIterator();
-    bool run();
-    std::string decrypt(std::string inp);
+    RotorConfig getRotorConfig();
+    std::string decrypt();
+    bool run(std::string crib, std::string plaintxt);
 };

@@ -7,7 +7,7 @@
 //
 
 #include "RotorSet.hpp"
-
+#include <iostream>
 RotorSet::RotorSet(RotorConfig r_config): _config(r_config) {
     for (int i = 0; i < NO_OF_ROTORS; i++){
         _rotors[i] = new Rotor ( _config.types[i], _config.offsets[i] );
@@ -79,4 +79,20 @@ void RotorSet::randomConfig(){
 
     type = rand() % NO_REFLECTOR_TYPES;
     setReflectorType(type);
+}
+
+
+RotorSet::RotorSet() {
+	 for (int i = 0; i < NO_OF_ROTORS; i++){
+	        _rotors[i] = new Rotor ( _config.types[i], _config.offsets[i] );
+	    }
+	    _reflector = new Reflector ( _config.reflectorType );
+
+	    for (int i = 0; i < NO_OF_ROTORS - 1; i++){
+	        _rotors[i]->nextRot = _rotors[i+1];
+	        _rotors[i+1]->prevRot = _rotors[i];
+	    }
+
+	    _rotors[NO_OF_ROTORS - 1]->nextRot = _reflector;
+	    _reflector->nextRot = _rotors[NO_OF_ROTORS - 1];
 }

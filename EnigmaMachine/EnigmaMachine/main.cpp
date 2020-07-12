@@ -14,7 +14,7 @@
 #include "EnigmaMachine.hpp"
 #include "Utils/config.h"
 #include "RotorConfig.hpp"
-
+#include "EnigmaDecrypter.hpp"
 
 int main(int argc, const char * argv[]) {
     int rotorNumbers[NO_OF_ROTORS] = {ROTOR_1, ROTOR_2, ROTOR_3};
@@ -41,4 +41,11 @@ int main(int argc, const char * argv[]) {
     
     std::cout << encoded << "\n";
     std::cout << enigmaMachine2.encode(encoded) << "\n";
+    EnigmaDecrypter enigmaDecrypter;
+    enigmaDecrypter.run(encoded, message);
+    RotorConfig dConfig=enigmaDecrypter.getRotorConfig();
+    for(int i = 0;i<NO_OF_ROTORS; i++){
+    	std::cout<<dConfig.offsets[i]<<" ";
+    }
+
 }

@@ -29,7 +29,7 @@ public:
     RotorSet(RotorConfig r_config);
     ~RotorSet();
     int parseValue(char input);
-
+    RotorSet();
     void setRotorOffset(int rotPos, int offset);
     void setRotorType(int rotPos, int type);
     void setReflectorType(int type);

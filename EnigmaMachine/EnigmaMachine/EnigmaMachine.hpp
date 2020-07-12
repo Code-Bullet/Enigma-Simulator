@@ -20,5 +20,10 @@ class EnigmaMachine {
 
 public:
     EnigmaMachine(RotorConfig r_config);
+    EnigmaMachine();
+
     std::string encode(std::string input);
+    void setRotorOffset(int[NO_OF_ROTORS]);
+    void setRotorType();
+    void setReflectorType();
 };

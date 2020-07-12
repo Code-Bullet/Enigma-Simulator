@@ -24,3 +24,20 @@ bool RotorConfig::operator == (const RotorConfig& rhs){
     }
     return reflectorType == rhs.reflectorType;
 }
+
+RotorConfig::RotorConfig(const RotorConfig& rc){
+	for (int i = 0; i < NO_OF_ROTORS; i++){
+	        offsets[i] = rc.offsets[i];
+	        types[i] = rc.types[i];
+	    }
+	    reflectorType = rc.reflectorType;
+}
+
+RotorConfig::RotorConfig(){
+	for (int i = 0; i < NO_OF_ROTORS; i++){
+		        offsets[i] = 1;
+		        types[i] = i;
+		    }
+		    reflectorType = REFLECTOR_B;
+}
+
